@@ -9,7 +9,7 @@ exports.allQuestion = [
       d: "Transient global amnesia",
     },
     ans:"Transient global amnesia",
-    date:"08/05/2023",
+    date:"06/05/2023",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ exports.allQuestion = [
       d: "All of the above",
     },
     ans:"Before the onset of amnestic state",
-    date:"06/05/2023",
+    date:"08/05/2023",
   },
 ];
 
