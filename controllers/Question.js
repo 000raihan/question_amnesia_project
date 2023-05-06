@@ -44,7 +44,7 @@ exports.getQuestion = async (req, res, next) => {
   console.log("question is : ", question);
 
   const userAns = await QuestionModel.findOne({
-    where: { question_no: question.id },
+    where: { question_no: question.id, user_id:userId},
   });
 
   if (userAns) {
@@ -88,13 +88,13 @@ exports.saveQuestion = async (req, res, next) => {
     if (savedQuz.correct_ans == savedQuz.user_ans) {
       return res.status(200).json({
         status: 1,
-        message: "Your ans is correct",
+        message: "Your answer is correct!",
       });
     }
 
     return res.status(200).json({
       status: 2,
-      message: "Your ans is incorrect",
+      message: "Your answer is incorrect!",
     });
   }
   return res.status(500).json({
