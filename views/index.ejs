@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div style="background-color: #f1f3f4">
+      <div class="container">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#"></a>
+            </div>
+            <ul
+              class="nav navbar-nav navbar-right"
+              style="flex-direction: row; align-items: center"
+            >
+              <li>
+                <p style="margin: 0; font-size: 1.2rem; font-weight: 600">
+                  Point : <%= point %>
+                </p>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- ================ -->
+    <div
+      class="container"
+      style="display: flex; flex-direction: column; align-items: center"
+    >
+      <h1 style="margin-top: 2rem; color: #01b379">Question Amnesia</h1>
+      <h4 style="margin-bottom: 2rem"><%= date %></h4>
+      <% if (status==1 || status==2) { %>
+      <div>
+        <h4 style="margin-bottom: 2rem"><%= message %></h4>
+      </div>
+      <% } %> <% if (status==3) { %>
+      <div class="q-container my-1">
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+          <div class="py-2 h5">
+            <p style="font-weight: 600; margin: 0">
+              <span style="color: #01b379; font-weight: 700">Q :</span>
+              <%= q?.ques %>
+            </p>
+          </div>
+          <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+            <form>
+              <label class="options">
+                <%= q?.options?.a %>
+                <input
+                  id="a-radio"
+                  value="<%= q?.options?.a %>"
+                  type="radio"
+                  name="radio"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="options"
+                ><%= q?.options?.b %>
+                <input
+                  value="<%= q?.options?.b %>"
+                  id="b-radio"
+                  type="radio"
+                  name="radio"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label value="<%= q?.options?.c %>" class="options"
+                ><%= q?.options?.c %>
+                <input
+                  value="<%= q?.options?.b %>"
+                  id="c-radio"
+                  type="radio"
+                  name="radio"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label value="<%= q?.options?.d %>" class="options"
+                ><%= q?.options?.d %>
+                <input
+                  value="<%= q?.options?.d %>"
+                  id="d-radio"
+                  type="radio"
+                  name="radio"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </form>
+          </div>
+        </div>
+        <div class="d-flex align-items-center pt-3">
+          <div class="ml-auto mr-sm-5">
+            <button
+              onclick="submitForm(event, '<%= JSON.stringify(q) %>', '<%= userId %>')"
+              class="btn btn-success"
+              style="background-color: #01b379 !important; border: none"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <script>
+      function submitForm(event, qData, userId) {
+        event.preventDefault();
+
+        const q = JSON.parse(qData);
+
+        // console.log("event is : ", event)
+        // console.log("q is : ", q)
+
+        const aRadio = document.getElementById("a-radio");
+        const bRadio = document.getElementById("b-radio");
+        const cRadio = document.getElementById("c-radio");
+        const dRadio = document.getElementById("d-radio");
+
+        let selectedValue;
+
+        if (aRadio.checked) {
+          selectedValue = aRadio.value;
+        } else if (bRadio.checked) {
+          selectedValue = bRadio.value;
+        } else if (cRadio.checked) {
+          selectedValue = cRadio.value;
+        } else if (dRadio.checked) {
+          selectedValue = dRadio.value;
+        }
+
+        const data = {
+          user_id: userId,
+          question_no: q?.id,
+          question: q?.ques,
+          correct_ans: q?.ans,
+          user_ans: selectedValue,
+        };
+
+        console.log("data is : ", data);
+
+        fetch("/save_quiz", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((res) => {
+            console.log("response is : ", res);
+            alert(res.message);
+
+            window.location.href = "/";
+            // Handle response
+          })
+
+          .catch((error) => {
+            console.error(error);
+            // Handle error
+          });
+      }
+    </script>
+  </body>
+</html>

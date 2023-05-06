@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="stylesheets/login.css" />
+  </head>
+  <body>
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-2">
+            <h2 class="heading-section">Question Amnesia</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-7 col-lg-5">
+            <div class="wrap" style="padding: 1rem">
+              <div
+                class="img"
+                style="
+                  background-image: url(images/exium_mups.svg);
+                  height: 100px !important;
+                  object-fit: contain !important;
+                  width: auto !important;
+                "
+              ></div>
+              <hr />
+              <div class="login-wrap p-4 p-md-4">
+                <form id="signInForm" class="signin-form">
+                  <div class="form-group mt-3">
+                    <input
+                      id="full_name"
+                      placeholder="Full Name"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                    <!-- <label class="form-control-placeholder" for="username"
+                      >Full Name</label
+                    > -->
+                  </div>
+                  <div class="form-group mt-3">
+                    <input
+                      id="mobile_number"
+                      placeholder="Phone Number"
+                      type="number"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mt-3">
+                    <input
+                      id="code"
+                      placeholder="Territory code"
+                      type="number"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <button
+                      onclick="submitForm(event)"
+                      type="submit"
+                      class="form-control btn btn-primary rounded submit px-3"
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </form>
+                <p class="text-center">
+                  Already have an account? <a href="/login"> Login</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        const form = document.getElementById("myForm");
+
+        var full_name = $("#full_name").val();
+        var mobile_number = $("#mobile_number").val();
+        var code = $("#code").val();
+
+        const data = { full_name, mobile_number, code };
+
+        console.log(" data is : ", data);
+
+        fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            console.log(JSON.stringify(response));
+            // alert("login Success!");
+            window.location.href = "/";
+            // Handle response
+          })
+          .catch((error) => {
+            console.error(error);
+            // Handle error
+          });
+      }
+
+      // $(document).ready(function () {
+      //   $("#signInForm").submit(function (e) {
+      //     e.preventDefault(); // Prevent the form from submitting via the browser
+
+      //     var full_name = $("#full_name").val();
+      //     var mobile_number = $("#mobile_number").val();
+      //     var code = $("#code").val();
+
+      //     const data = { full_name, mobile_number, code };
+
+      //     console.log("data is : ", data);
+
+      //     $.ajax({
+      //       type: "POST",
+      //       url: "/api/register",
+      //       data:data,
+      //       success: function () {
+      //         alert("Form submitted successfully!");
+      //       },
+      //       error: function () {
+      //         alert("Error submitting form!");
+      //       },
+      //     });
+      //   });
+      // });
+    </script>
+  </body>
+</html>
