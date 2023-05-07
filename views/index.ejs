@@ -147,7 +147,7 @@
           user_ans: selectedValue,
         };
 
-        console.log("data is : ", data);
+        // console.log("data is : ", data);
 
         fetch("/save_quiz", {
           method: "POST",
@@ -158,7 +158,7 @@
         })
           .then((response) => response.json())
           .then((res) => {
-            console.log("response is : ", res);
+            // console.log("response is : ", res);
             alert(res.message);
 
             window.location.href = "/";
