@@ -9,9 +9,10 @@ exports.allQuestion = [
       d: "Transient global amnesia",
     },
     ans:"Transient global amnesia",
-    date:"06/05/2023",
+    date:"11/05/2023",
   },
   {
+    
     id: 2,
     ques: "What is the cause of Chronic Amnesia?",
     options: {
@@ -21,7 +22,7 @@ exports.allQuestion = [
       d: "Hippocampal damage",
     },
     ans:"Hippocampal damage",
-    date:"07/05/2023",
+    date:"12/05/2023",
   },
   {
     id: 5,
@@ -33,7 +34,7 @@ exports.allQuestion = [
       d: "All of the above",
     },
     ans:"Before the onset of amnestic state",
-    date:"08/05/2023",
+    date:"13/05/2023",
   },
 ];
 

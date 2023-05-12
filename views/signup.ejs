@@ -24,22 +24,25 @@
     <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-6 text-center mb-2">
-            <h2 class="heading-section">Question Amnesia</h2>
+          <div class="col-md-6 text-center mb-2" style="width: 100%; display: flex; justify-content: center;">
+            <div
+              class="img"
+              style="
+                background-image: url(images/exium_mups.svg);
+                height: 100px !important;
+                object-fit: contain !important;
+                width: 70% !important;
+              "
+            ></div>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-7 col-lg-5">
             <div class="wrap" style="padding: 1rem">
-              <div
-                class="img"
-                style="
-                  background-image: url(images/exium_mups.svg);
-                  height: 100px !important;
-                  object-fit: contain !important;
-                  width: auto !important;
-                "
-              ></div>
+
+              <h2 class="heading-section" style="text-align: center">
+                Daily Amnesia Quiz
+              </h2>
               <hr />
               <div class="login-wrap p-4 p-md-4">
                 <form id="signInForm" class="signin-form">
@@ -67,11 +70,12 @@
                   <div class="form-group mt-3">
                     <input
                       id="code"
-                      placeholder="Territory code"
+                      placeholder="MIO SAP ID"
                       type="number"
                       class="form-control"
                       required
                     />
+                    <p style="font-size: 1rem; margin-top: .5rem;">( Please collect it from Radiant Colleague )</p>
                   </div>
 
                   <div class="form-group">

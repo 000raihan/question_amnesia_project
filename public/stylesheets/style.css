@@ -1,155 +1,94 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
-
-html,
-body {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  background: #fff;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-
-a {
-  text-decoration: none !important;
-  color: black !important;
-}
-
-.wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-h1.heading {
-  color: #fff;
-  font-size: 1.15em;
-  font-weight: 900;
-  margin: 0 0 0.5em;
-  color: #505050;
-}
-@media (min-width: 450px) {
-  h1.heading {
-    font-size: 3.55em;
-  }
-}
-@media (min-width: 760px) {
-  h1.heading {
-    font-size: 3.05em;
-  }
-}
-@media (min-width: 900px) {
-  h1.heading {
-    font-size: 3.25em;
-    margin: 0 0 0.3em;
-  }
-}
-.card {
-  padding: 1rem;
-}
-
-#demoBookExample {
-  max-width: 1100px !important;
-}
-
-/* =====index.ejs===================== */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #333;
+.question p {
+  font-size: 50px;
 }
-.q-container {
-  background-color: #f1f3f4;
-  color: #1f1f1f;
-  border-radius: 10px;
-  padding: 20px;
-  font-family: "Montserrat", sans-serif;
-  max-width: 800px !important;
-  width: 100%;
+
+.input_group {
+  margin-top: 0.5rem;
+  display: flex !important;
+  align-items: center !important;
 }
-.container > p {
-  font-size: 32px;
+
+#options {
+  margin-bottom: 2rem;
 }
-.question {
-  width: 75%;
+
+.input_group input {
+  height: 26px;
+  width: 33px;
 }
-.options {
-  position: relative;
-  padding-left: 40px;
+.input_group label {
+  margin-left: 0.5rem !important;
+  font-size: 30px;
 }
-#options label {
-  display: block;
-  margin-bottom: 15px;
-  font-size: 14px;
-  cursor: pointer;
+
+.submit-btn {
+  font-size: 1.5rem !important;
 }
-.options input {
-  opacity: 0;
-}
-.checkmark {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #555;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-}
-.options input:checked ~ .checkmark:after {
-  display: block;
-}
-.options .checkmark:after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  display: block;
-  background: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 300ms ease-in-out 0s;
-}
-.options input[type="radio"]:checked ~ .checkmark {
-  background: #21bf73;
-  transition: 300ms ease-in-out 0s;
-}
-.options input[type="radio"]:checked ~ .checkmark:after {
-  transform: translate(-50%, -50%) scale(1);
-}
-.btn-primary {
-  background-color: #555;
-  color: #ddd;
-  border: 1px solid #ddd;
-}
-.btn-primary:hover {
-  background-color: #21bf73;
-  border: 1px solid #21bf73;
-}
-.btn-success {
-  padding: 5px 25px;
-  background-color: #21bf73;
-}
-@media (max-width: 576px) {
-  .question {
+/* @media (max-width: 991px) {
+  .p_container {
+    width: 80vw;
+  }
+} */
+
+@media (max-width: 991px) {
+  .p_container {
+    width: 95vw;
+  }
+  .q-container {
     width: 100%;
-    word-spacing: 2px;
+    padding: 2rem;
+    background-color: #f1f3f4;
   }
-}
 
-@media (min-width: 768px) {
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 795px !important;
+  .p_container h1{
+   font-size: 2.5rem;
+  }
+  .p_container h3{
+   font-size: 5rem;
+  }
+  .p_container p{
+   font-size: 2.5rem;
+  }
+  .p_container h4{
+   font-size: 2.5rem;
+   margin-top: 1.5rem;
+  }
+
+  .question p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .input_group {
+    justify-content:flex-start;
+    margin-top: 1.2rem;
+  }
+  .input_group input {
+    height: 62px;
+    width: 84px;
+    flex: 1;
+  }
+  .input_group label {
+    margin-left: 1.2rem !important;
+    font-size: 2rem;
+    flex: 5;
+  }
+  .submit-btn {
+    font-size: 2rem !important;
+    padding: 1rem 5rem !important;
+  }
+
+  #ans_head{
+    font-size: 3rem !important;
+  }
+  #ans_title{
+    font-size: 2rem !important;
   }
 }

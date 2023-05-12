@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>Question Amnesia</title>
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -23,8 +27,8 @@
               style="flex-direction: row; align-items: center"
             >
               <li>
-                <p style="margin: 0; font-size: 1.2rem; font-weight: 600">
-                  Point : <%= point %>
+                <p style="margin: 0; font-size: 2rem; font-weight: 600">
+                  Total Point : <%= point %>
                 </p>
               </li>
               <li></li>
@@ -34,86 +38,117 @@
       </div>
     </div>
     <!-- ================ -->
-    <div
-      class="container"
-      style="display: flex; flex-direction: column; align-items: center"
-    >
-      <h1 style="margin-top: 2rem; color: #01b379">Question Amnesia</h1>
-      <h4 style="margin-bottom: 2rem"><%= date %></h4>
-      <% if (status==1 || status==2) { %>
-      <div>
-        <h4 style="margin-bottom: 2rem"><%= message %></h4>
-      </div>
-      <% } %> <% if (status==3) { %>
-      <div class="q-container my-1">
-        <div class="question ml-sm-5 pl-sm-5 pt-2">
-          <div class="py-2 h5">
-            <p style="font-weight: 600; margin: 0">
-              <span style="color: #01b379; font-weight: 700">Q :</span>
-              <%= q?.ques %>
-            </p>
+    <div style="width: 100%; display: flex; justify-content: center">
+      <div
+        class="p_container"
+        style="display: flex; flex-direction: column; align-items: center"
+      >
+        <h1 style="margin-top: 2rem; color: #01b379; text-align: center;">Daily Amnesia Quiz</h1>
+        <h4 style="margin-bottom: 2rem"><%= date %></h4>
+        <% if (status==1 || status==2) { %>
+        <div style="margin-bottom: 2rem; border: 1px solid #DADCE0; display: flex; align-items: center; justify-content: center; padding: 1rem 2rem;">
+          <h4 style="text-align: center; font-weight: 400;">
+            <%= message %>
+          </h4>
+        </div>
+        <% } %> <% if (status==3) { %>
+        <div class="q-container my-1">
+          <div class="question">
+            <div class="py-2">
+              <p style="font-weight: 600">
+                <span style="color: #01b379; font-weight: 700">Q :</span>
+                <%= q?.ques %>
+              </p>
+            </div>
+            <div class="" id="options">
+              <form>
+                <div class="input_group">
+                  <input
+                    id="a-radio"
+                    value="<%= q?.options?.a %>"
+                    type="radio"
+                    name="radio"
+                  />
+                  <label class="options"> <%= q?.options?.a %> </label>
+                </div>
+                <!-- <span class="checkmark"></span> -->
+                <div class="input_group">
+                  <input
+                    value="<%= q?.options?.b %>"
+                    id="b-radio"
+                    type="radio"
+                    name="radio"
+                  />
+                  <label class="options"><%= q?.options?.b %> </label>
+                </div>
+                <div class="input_group">
+                  <input
+                    value="<%= q?.options?.b %>"
+                    id="c-radio"
+                    type="radio"
+                    name="radio"
+                  />
+                  <label value="<%= q?.options?.c %>" class="options"
+                    ><%= q?.options?.c %>
+                  </label>
+                </div>
+                <div class="input_group">
+                  <input
+                    value="<%= q?.options?.d %>"
+                    id="d-radio"
+                    type="radio"
+                    name="radio"
+                  />
+                  <label value="<%= q?.options?.d %>" class="options"
+                    ><%= q?.options?.d %>
+                  </label>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
-            <form>
-              <label class="options">
-                <%= q?.options?.a %>
-                <input
-                  id="a-radio"
-                  value="<%= q?.options?.a %>"
-                  type="radio"
-                  name="radio"
-                />
-                <span class="checkmark"></span>
-              </label>
-              <label class="options"
-                ><%= q?.options?.b %>
-                <input
-                  value="<%= q?.options?.b %>"
-                  id="b-radio"
-                  type="radio"
-                  name="radio"
-                />
-                <span class="checkmark"></span>
-              </label>
-              <label value="<%= q?.options?.c %>" class="options"
-                ><%= q?.options?.c %>
-                <input
-                  value="<%= q?.options?.b %>"
-                  id="c-radio"
-                  type="radio"
-                  name="radio"
-                />
-                <span class="checkmark"></span>
-              </label>
-              <label value="<%= q?.options?.d %>" class="options"
-                ><%= q?.options?.d %>
-                <input
-                  value="<%= q?.options?.d %>"
-                  id="d-radio"
-                  type="radio"
-                  name="radio"
-                />
-                <span class="checkmark"></span>
-              </label>
-            </form>
+          <div class="d-flex align-items-center pt-3">
+            <div class="ml-auto mr-sm-5" style="text-align: center">
+              <button
+                onclick="submitForm(event, '<%= JSON.stringify(q) %>', '<%= userId %>')"
+                class="btn btn-success submit-btn"
+                style="background-color: #01b379 !important; border: none"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
-        <div class="d-flex align-items-center pt-3">
-          <div class="ml-auto mr-sm-5">
-            <button
-              onclick="submitForm(event, '<%= JSON.stringify(q) %>', '<%= userId %>')"
-              class="btn btn-success"
-              style="background-color: #01b379 !important; border: none"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
+        <% } %>
       </div>
-      <% } %>
+
     </div>
 
-    <script>
+    <!-- Button trigger modal -->
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> -->
+          <div class="modal-body">
+            <h3 id="ans_head"></h3>
+            <!-- <h5 id="congress" style="margin: 0;"></h5> -->
+            <p id="ans_title"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+   
+   <script>
       function submitForm(event, qData, userId) {
         event.preventDefault();
 
@@ -158,10 +193,30 @@
         })
           .then((response) => response.json())
           .then((res) => {
-            // console.log("response is : ", res);
-            alert(res.message);
+            console.log("response is : ", res);
+            function showModal() {
 
-            window.location.href = "/";
+            document.getElementById("ans_head").innerHTML = res.message;
+            if(res.status == 2){
+              document.getElementById("ans_title").innerHTML = `Correct answer is : <strong>${res.correct}</strong>`;
+            }else if(res.status ==1){
+              document.getElementById("ans_title").innerHTML = "Your answer is correct";
+            }
+
+            var modalElement = document.getElementById('exampleModal');
+            var modal = new bootstrap.Modal(modalElement);
+            modal.show();
+            }
+
+            showModal();
+
+            $('#exampleModal').on('hidden.bs.modal', function () {
+                 // Code to run after the modal is closed
+              console.log('Modal has been closed');
+               window.location.href = "/";
+            })
+
+            // window.location.href = "/";
             // Handle response
           })
 
