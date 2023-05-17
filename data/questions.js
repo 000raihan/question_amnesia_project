@@ -9,7 +9,7 @@ exports.allQuestion = [
       d: "Transient global amnesia",
     },
     ans:"Transient global amnesia",
-    date:"16/05/2023",
+    date:"20/05/2023",
   },
   {
     
@@ -22,10 +22,10 @@ exports.allQuestion = [
       d: "Hippocampal damage",
     },
     ans:"Hippocampal damage",
-    date:"17/05/2023",
+    date:"21/05/2023",
   },
   {
-    id: 5,
+    id:3,
     ques: "Retrograde amnesia involves an inability to recall experiences that occurs:",
     options: {
       a: "Before the onset of amnestic state",
@@ -34,7 +34,7 @@ exports.allQuestion = [
       d: "All of the above",
     },
     ans:"Before the onset of amnestic state",
-    date:"18/05/2023",
+    date:"22/05/2023",
   },
 ];
 
