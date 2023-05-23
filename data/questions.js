@@ -69,7 +69,7 @@ exports.allQuestion = [
       c: "Mood stabilizers",
       d: "Anti-psychotic",
     },
-    ans:"BBenzodiazepines",
+    ans:"Benzodiazepines",
     date:"25/05/2023",
   },
   {
@@ -81,7 +81,7 @@ exports.allQuestion = [
       c: "Event specific psychogenic amnesia",
       d: "Neurogenic amnesia",
     },
-    ans:"TGA",
+    ans:"Event specific psychogenic amnesia",
     date:"26/05/2023",
   },
   {
