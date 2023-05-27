@@ -86,7 +86,7 @@ exports.allQuestion = [
   },
   {
     id:8,
-    ques: "8.	Which component of amnesia is usually prominent?",
+    ques: "Which component of amnesia is usually prominent?",
     options: {
       a: "Anterograde component",
       b: "Retrograde component",
