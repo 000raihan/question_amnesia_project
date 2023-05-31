@@ -131,7 +131,55 @@ exports.allQuestion = [
     },
     ans:"Alzheimer’s Disease",
     date:"30/05/2023",
-  }
+  },
+	 {
+    id:12,
+    ques: "What kind of Amnesia occurs immediately preceding a brain concussion or electroshock therapy?",
+    options: {
+      a: "Retrograde amnesia",
+      b: "TGA",
+      c: "Anterograde amnesia",
+      d: "Total loss of memory",
+    },
+    ans:"Retrograde amnesia",
+    date:"31/05/2023",
+  },
+   {
+    id:13,
+    ques: "Inability to create new declarative long term memories after Hippocampal lesions is called",
+    options: {
+      a: "Retrograde amnesia",
+      b: "Anterograde amnesia",
+      c: "TGA",
+      d: "Digital amnesia",
+    },
+    ans:"Anterograde amnesia",
+    date:"31/05/2023",
+  },
+   {
+    id:14,
+    ques: "Inability to create memories from the past after Hippocampal or Thalamic lesions is called",
+    options: {
+      a: "TGA",
+      b: "Digital amnesia",
+      c: "Anterograde amnesia",
+      d: "Retrograde amnesia",
+    },
+    ans:"Retrograde amnesia",
+    date:"31/05/2023",
+  },
+   {
+    id:15,
+    ques: "What type of Amnesia occurs after bilateral removal of the Hippocampi?",
+    options: {
+      a: "Retrograde amnesia",
+      b: "Anterograde amnesia",
+      c: "Partial amnesia",
+      d: "Total memory loss",
+    },
+    ans:"Anterograde amnesia",
+    date:"31/05/2023",
+  },
   
 ];
 
