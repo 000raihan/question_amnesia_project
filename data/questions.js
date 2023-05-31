@@ -154,7 +154,7 @@ exports.allQuestion = [
       d: "Digital amnesia",
     },
     ans:"Anterograde amnesia",
-    date:"31/05/2023",
+    date:"01/06/2023",
   },
    {
     id:14,
@@ -166,7 +166,7 @@ exports.allQuestion = [
       d: "Retrograde amnesia",
     },
     ans:"Retrograde amnesia",
-    date:"31/05/2023",
+    date:"02/06/2023",
   },
    {
     id:15,
@@ -178,7 +178,7 @@ exports.allQuestion = [
       d: "Total memory loss",
     },
     ans:"Anterograde amnesia",
-    date:"31/05/2023",
+    date:"03/06/2023",
   },
   
 ];
