@@ -131,7 +131,55 @@ exports.allQuestion = [
     },
     ans:"Alzheimer’s Disease",
     date:"30/05/2023",
-  }
+  },
+  {
+    id:12,
+    ques: "What kind of Amnesia occurs immediately preceding a brain concussion or electroshock therapy?",
+    options: {
+      a: "Retrograde amnesia",
+      b: "TGA",
+      c: "Anterograde amnesia",
+      d: "Total loss of memory",
+    },
+    ans:"Retrograde amnesia",
+    date:"30/05/2023",
+  },
+  {
+    id:13,
+    ques: "Inability to create new declarative long term memories after Hippocampal lesions is called:",
+    options: {
+      a: "Retrograde amnesia",
+      b: "Anterograde amnesia",
+      c: "TGA",
+      d: "Digital amnesia",
+    },
+    ans:"Anterograde amnesia",
+    date:"30/05/2023",
+  },
+  {
+    id:14,
+    ques: "Inability to create memories from the past after Hippocampal or Thalamic lesions is called:",
+    options: {
+      a: "TGA",
+      b: "Head trauma",
+      c: "Herpes simplex encephalitis",
+      d: "Wernicke-korsakoff encephalitis",
+    },
+    ans:"Alzheimer’s Disease",
+    date:"30/05/2023",
+  },
+  {
+    id:15,
+    ques: "The most common cause of progressive memory impairment in the elderly is:",
+    options: {
+      a: "Alzheimer’s Disease",
+      b: "Head trauma",
+      c: "Herpes simplex encephalitis",
+      d: "Wernicke-korsakoff encephalitis",
+    },
+    ans:"Alzheimer’s Disease",
+    date:"30/05/2023",
+  },
   
 ];
 
