@@ -62,7 +62,7 @@
   }
 
   .question p {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
   }
 
@@ -71,14 +71,14 @@
     margin-top: 1.2rem;
   }
   .input_group input {
-    height: 62px;
-    width: 84px;
+    height: 50px;
+    width: 50px;
     flex: 1;
   }
   .input_group label {
     margin-left: 1.2rem !important;
-    font-size: 2rem;
-    flex: 5;
+    font-size: 1.5rem;
+    flex: 6;
   }
   .submit-btn {
     font-size: 2rem !important;
